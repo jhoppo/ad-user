@@ -1,2 +1,5 @@
 employeeList.txt
 /tmp/
+/input/
+/cron_log/
+/.idea/

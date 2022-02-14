@@ -1,0 +1,1 @@
+C:\Users\jack.hong\AppData\Local\Programs\Python\Python39\python.exe D:\103_MIS\jh_scripts\ad.v2\002-quit\002-quit\002_quit_info.py

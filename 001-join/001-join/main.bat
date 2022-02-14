@@ -1,0 +1,1 @@
+C:\Users\jack.hong\AppData\Local\Programs\Python\Python39\python.exe D:\103_MIS\jh_scripts\ad.v2\001-join\001-join\main.py
