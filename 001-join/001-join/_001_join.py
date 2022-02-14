@@ -202,7 +202,7 @@ class NewEmployee:
         templated = [Environment().from_string(template).render(noobAccount=self.sAmAccountNames[i],Password=self.Passwords[i],Email=self.Emails[i],printer=self.printerCode()[i]) for i in range(len(self.sAmAccountNames)) ]
         templated_path = [f"D:/103_MIS/jh_scripts/ad.v2/001-join/001-join/output/999_{self._execDate}_mail_{self.sAmAccountNames[i]}.html" for i in range(len(templated))]
         [open(templated_path[i],"w",encoding='UTF-8').write(templated[i]) for i in range(len(templated))]
-        [ jhMail.JiehongEmail(subject = '【新進人員】系統帳號密碼通知', sender=sender, sender_password=sender_password, receivers=[self.Emails[i]], cc=['jack.hong@oppo-aed.tw','tsunghui.li@oppo-aed.tw'], mail_content = templated[i], mail_content_style='html').sendHTMLMail() for i in range(len(self.Emails)) ]
+        [ jhMail.JiehongEmail(subject = '【新進人員】系統帳號密碼通知', sender=sender, sender_password=sender_password, receivers=[self.Emails[i]], cc=ccList, mail_content = templated[i], mail_content_style='html').sendHTMLMail() for i in range(len(self.Emails)) ]
         return templated_path
 
 def forti_ssl_vpn(device, username, password, add_user_info, add_group):
