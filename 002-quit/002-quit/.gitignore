@@ -1,1 +1,8 @@
 /azure_cmd/
+/cron_log/
+/input/
+/output/
+/__pycache__
+002_quit_info.bat
+002-quit.pyproj
+email.j2

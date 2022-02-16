@@ -1,5 +1,6 @@
 import datetime
 import jhMail
+from jinja2 import Environment
 class NewEmployee:
     def __init__(self, noobFile):
         self._execDate = datetime.datetime.today().strftime("%Y%m%d")
@@ -197,8 +198,8 @@ class NewEmployee:
         cred = open("D:/103_MIS/jh_scripts/ad.v2/001-join/001-join/999_credentials.txt", "r", encoding="UTF-8").readlines()
         sender = cred[0].split(":")[1].strip()
         sender_password = cred[1].split(":")[1].strip()
-        ccList = open("D:/103_MIS/jh_scripts/ad.v2/001-join/001-join/cc.txt","r").readlines()
-        template = open("email.j2", "r", encoding='UTF-8').read()
+        ccList = open("D:/103_MIS/jh_scripts/ad.v2/cc.txt","r").readlines()
+        template = open("D:/103_MIS/jh_scripts/ad.v2/001-join/001-join/email.j2", "r", encoding='UTF-8').read()
         templated = [Environment().from_string(template).render(noobAccount=self.sAmAccountNames[i],Password=self.Passwords[i],Email=self.Emails[i],printer=self.printerCode()[i]) for i in range(len(self.sAmAccountNames)) ]
         templated_path = [f"D:/103_MIS/jh_scripts/ad.v2/001-join/001-join/output/999_{self._execDate}_mail_{self.sAmAccountNames[i]}.html" for i in range(len(templated))]
         [open(templated_path[i],"w",encoding='UTF-8').write(templated[i]) for i in range(len(templated))]

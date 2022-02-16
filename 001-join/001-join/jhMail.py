@@ -1,4 +1,5 @@
 import smtplib
+from jinja2 import Environment
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 class JiehongEmail:
@@ -43,7 +44,7 @@ class JiehongEmail:
         return
 
 
-#template = open("email.j2", "r").read()
+#template = open("D:/103_MIS/jh_scripts/ad.v2/001-join/001-join/email.j2", "r").read()
 #templated = Environment().from_string(template).render(noobAccount='nora.yang.a00814',Password='Today@0214',Email='nora.yang.a00814@oppo-aed.tw',printer='345621')
 #open("nora.yang.a00814.html", "w").write(templated)
 

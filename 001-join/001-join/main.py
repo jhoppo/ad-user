@@ -26,7 +26,6 @@ for _theCompany in set(test1.companys):
                             sender_password=sender_password).sendMail()
     else:
         test1.create_PS_cmd()
-        test1.send_noob_mail()
         test1.write_new_employee_data()
         for i in ['oppo','realme']:
             if os.path.isfile(f"{test1.casePath}azure_cmd/AzureAD_{i}_{test1._execDate}.ps1"):
@@ -38,4 +37,4 @@ for _theCompany in set(test1.companys):
                     print("Azure AD Failed!")
                     time.sleep(600)
 
-
+        test1.send_noob_mail()
